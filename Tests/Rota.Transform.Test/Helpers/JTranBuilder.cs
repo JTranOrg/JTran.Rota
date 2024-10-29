@@ -1,0 +1,30 @@
+﻿using System.Reflection;
+
+using MondoCore.Collections;
+
+using JTran;
+using JTran.Random;
+
+namespace Rota.Transform.Test
+{
+    internal static class JTranBuilder
+    {
+        internal static async Task<ITransformer<Ship>> CreateTransformer(string transformPath, object args)
+        {
+            var transform = await LoadTransform(transformPath);
+
+            return TransformerBuilder.FromString(transform)
+                                     .AddArguments(args.ToReadOnlyDictionary()!)
+                                     .AddExtension(new RandomExtensions())
+                                     .AddDocumentRepository("docs", new DocumentRepository())
+                                     .Build<Ship>();
+        }
+
+        internal static Task<string> LoadTransform(string name)
+        {
+            var location = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location).Replace("Rota.Transform.Test\\bin\\Debug\\net8.0", "").Replace("Rota.Transform.Test\\bin\\Release\\net8.0", "");
+            
+            return File.ReadAllTextAsync(Path.Combine(location, "Transforms", name + ".jtran"));
+        }    
+    }
+}
