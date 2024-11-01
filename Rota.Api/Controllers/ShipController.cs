@@ -1,26 +1,27 @@
+using System.Net;
+using System.Text;
+
 using Microsoft.AspNetCore.Mvc;
+
+using Rota.Service;
 
 namespace Rota.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ShipController : ControllerBase
+    public class ShipController(IShipService svc) : ControllerBase
     {
-        public ShipController(ILogger<ShipController> logger)
-        {
-            _logger = logger;
-        }
-
         [HttpGet]
-        public IEnumerable<Ship> Get()
+        public async Task<ContentResult> Get()
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            var result = await svc.GetAll();
+
+            return new ContentResult
             {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+                Content     = result,
+                ContentType = "application/json",
+                StatusCode  = 200,
+            };
         }
     }
 }

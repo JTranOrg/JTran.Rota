@@ -20,7 +20,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rota.Api", "Rota.Api\Rota.A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rota.Service", "Rota.Service\Rota.Service.csproj", "{C6CFE0EE-374E-48E7-9DF8-876A9F77E0C5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transforms", "Transforms\Transforms.csproj", "{C1DA1FAD-5B77-48BC-9279-A2C0DF4844A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transforms", "Tests\Transforms\Transforms.csproj", "{D645A2C8-AE98-4670-8DBD-22095213545C}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Rota.Web", "Rota.Web\Rota.Web.esproj", "{D549E22F-9B76-4B27-A3B9-1784CCAF8652}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,10 +46,16 @@ Global
 		{C6CFE0EE-374E-48E7-9DF8-876A9F77E0C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6CFE0EE-374E-48E7-9DF8-876A9F77E0C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6CFE0EE-374E-48E7-9DF8-876A9F77E0C5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C1DA1FAD-5B77-48BC-9279-A2C0DF4844A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C1DA1FAD-5B77-48BC-9279-A2C0DF4844A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C1DA1FAD-5B77-48BC-9279-A2C0DF4844A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C1DA1FAD-5B77-48BC-9279-A2C0DF4844A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D645A2C8-AE98-4670-8DBD-22095213545C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D645A2C8-AE98-4670-8DBD-22095213545C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D645A2C8-AE98-4670-8DBD-22095213545C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D645A2C8-AE98-4670-8DBD-22095213545C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D549E22F-9B76-4B27-A3B9-1784CCAF8652}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D549E22F-9B76-4B27-A3B9-1784CCAF8652}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D549E22F-9B76-4B27-A3B9-1784CCAF8652}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D549E22F-9B76-4B27-A3B9-1784CCAF8652}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D549E22F-9B76-4B27-A3B9-1784CCAF8652}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D549E22F-9B76-4B27-A3B9-1784CCAF8652}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +63,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{76172D29-5446-48A9-9C6A-7CF433428285} = {2E1AEECD-EF79-4BB3-85A6-B43FBF0D4DFE}
 		{2E8175C4-BC1A-4FA8-876B-A3420B3FBC54} = {2E1AEECD-EF79-4BB3-85A6-B43FBF0D4DFE}
+		{D645A2C8-AE98-4670-8DBD-22095213545C} = {2E1AEECD-EF79-4BB3-85A6-B43FBF0D4DFE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {95B81A49-7C69-455E-9627-6FF789B1A697}

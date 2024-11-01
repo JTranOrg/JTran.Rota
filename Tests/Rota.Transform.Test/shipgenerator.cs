@@ -24,7 +24,7 @@ namespace Rota.Transform.Test
             Assert.IsNotNull(array);
 
             #if DEBUG
-            await File.WriteAllTextAsync($"C:\\Development\\Projects\\JTranOrg\\JTran\\Rota\\Transforms\\Documents\\ships.json", result);
+            await File.WriteAllTextAsync($"C:\\Development\\Projects\\JTranOrg\\JTran.Rota\\Tests\\Transforms\\Documents\\ships.json", result);
             #endif
 
             return result;

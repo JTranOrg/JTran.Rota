@@ -18,15 +18,22 @@ namespace Rota.Transform.Test
         [DataRow(1415)]
         public async Task DBPopulators_ships(int numShips)
         {
-            await Populate("shipgenerator", "ships", new { NumShips = numShips });
+            await Populate<Ship>("shipgenerator", "ships", new { NumShips = numShips });
+        }
+        
+        [TestMethod]
+        [DataRow(1415 * 15)]
+        public async Task DBPopulators_persons(int numPersons)
+        {
+            await Populate<Person>("persongenerator", "persons", new { NumPersons = numPersons });
         }
         
         #region Private
 
-        private async Task Populate(string transform, string  collectionName, object args)
+        private async Task Populate<T>(string transform, string  collectionName, object args) where T : IIdentifiable<Guid>, new()
         {
-            await using var output = new MongoStreamFactory<Ship>(DatabaseName, collectionName, ConnectionString);
-            var transformer  = await JTranBuilder.CreateTransformer(transform, args);
+            await using var output = new MongoStreamFactory<T>(DatabaseName, collectionName, ConnectionString);
+            var transformer  = await JTranBuilder.CreateTransformer<T>(transform, args);
 
             transformer.Transform(_dummySource, output);
         }

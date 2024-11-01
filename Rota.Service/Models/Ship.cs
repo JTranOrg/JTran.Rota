@@ -2,7 +2,7 @@
 
 namespace Rota.Service
 {
-    internal class Ship : IIdentifiable<Guid>
+    public class Ship : IIdentifiable<Guid>
     {
         public Guid   Id               { get; set; } = Guid.NewGuid();
         public string name             { get; set; } = "";

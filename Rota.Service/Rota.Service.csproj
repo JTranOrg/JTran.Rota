@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="JTran" Version="4.5.1" />
     <PackageReference Include="MondoCore.MongoDB" Version="2.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>

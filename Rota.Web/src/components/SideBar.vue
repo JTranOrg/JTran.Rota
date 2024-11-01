@@ -1,0 +1,8 @@
+<template>
+  <div class="sidebar">
+     <ul>
+       <li></li>
+     </ul>
+  </div>
+</template>
+

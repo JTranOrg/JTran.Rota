@@ -1,0 +1,199 @@
+@import './base.less';
+@import './colors.less';
+
+body
+{
+  background-color:       @main-body-clr;
+  font-family:            'Segoe UI'
+}
+
+h2
+{
+  font-weight:            600;
+  color:                  #2c3e50;
+}
+
+h3
+{
+  font-weight:            600;
+  color:                  #2c3e50;
+  margin:                 0 0 20px 6px;
+}
+
+@sidebar-wd:              100px;
+@list-wd:                 300px;
+
+.shiplist
+{
+  background-color:       @shiplist-background-clr;
+  width:                  @list-wd;
+  position:               absolute;
+  left:                   @sidebar-wd;
+  top:                    0;
+  bottom:                 0;
+  padding:                20px;
+
+  ul
+  {
+    list-style-type:      none;
+    padding:              0;
+    margin:               20px 0 0 -10px;
+
+    li
+    {
+      margin-bottom:      2px;
+      padding:            5px 5px 5px 12px;
+
+      div:first-child
+      {
+        font-size:        12pt;
+        font-weight:      500;
+        float: none;
+      }
+
+      div:last-child
+      {
+        font-size:        11pt;
+        font-weight:      500;
+        color:            #bbb; 
+        float:            none;
+        margin:           -2px 0 0 1px;
+
+      }
+    }
+  }
+}
+
+.drilldown
+{
+  table tr,
+  ul li
+  {
+    &:hover
+    {
+      cursor: pointer;
+      background-color: #E7E0EB;
+    }
+  }
+}
+
+.shipdetails
+{
+  position:               absolute;
+  left:                   @sidebar-wd + @list-wd;
+  right:                  0;
+  top:                    0;
+  bottom:                 0;
+  padding:                40px;
+
+  div
+  {
+    background-color:     white;
+    margin:               20px 30px 30px 0;
+    padding:              28px;
+    min-width:            24em;
+    min-height:           23.5em;
+    border-radius:        14px;
+    float:                left;
+
+    table
+    {
+      width:              100%;
+      border-spacing:     0;
+
+      tr
+      {
+
+        td
+        {
+          font-weight:    600;
+          color:          #4b5675; 
+          padding:        4px 16px 4px 4px;
+          border-bottom:  1px dashed #ccc;
+        }
+
+        &:last-child td
+        {
+          border-bottom:  none;
+        }
+          
+      }
+    }
+  }
+}
+
+.sidebar
+{
+  background-color: @sidebar-background-clr;
+  width:            @sidebar-wd;
+  position:         absolute;
+  left:             0;
+  top:              0;
+  bottom:           0;
+
+  ul
+  {
+    list-style-type:      none;
+    padding:              0;
+    margin:               20px;
+
+    li
+    {
+      width: 60px;
+      height: 60px;
+      background-color: white;
+    }
+
+    li:first-child
+    {
+      background-image: url("ships.png");
+      color: white;
+
+      &:hover
+      {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+#app
+{
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+a,
+.green
+{
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover)
+{
+  a:hover
+  {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px)
+{
+  body
+  {
+    display: flex;
+    place-items: center;
+  }
+
+  #app
+  {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0 2rem;
+  }
+}
