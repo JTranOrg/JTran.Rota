@@ -1,5 +1,7 @@
 {
   "#variable(origins)":   "#(document(docs, origins))",
+  "#variable(persons)":   "#(document(docs, persons))",
+
   "#variable(nameSuffixes)":   
   [
     "",
@@ -152,94 +154,6 @@
     "Tomal",
     "Valdore"   
   ],
-  "#variable(Surnames)":   
-  [
-    "Smith",        "Jones",        "Anderson",     "Johnson",
-    "Taylor",       "Jordan",       "Franklin",     "Washington",
-    "Madison",      "Monroe",       "Benson",       "Harris",
-    "Boyle",        "Lincoln",      "Clinton",      "Carpenter",
-    "Collins",      "Davis",        "Alexander",    "Allen",
-    "Davidson",     "Porter",       "Griffin",      "Griffith",
-    "Marshall",     "Moore",        "Weldy",        "Perkins",
-    "Strauss",      "Palmer",       "Sullivan",     "Stone",
-    "Warner",       "Nelson",       "Miller",       "Baldwin",
-    "Simon",        "Wright",       "Watson",       "Holmes",
-    "Chandler",     "Fuller",       "Sheldon",      "Field",
-    "McCormick",    "Wolfe",        "Blair",        "Butler",
-    "Cooper",       "Norris",       "Page",         "Cohen",
-    "Wilson",       "Holden",       "Douglas",      "Bennet",
-    "Adams",        "James",        "Green",        "White",
-    "Black",        "Brown",        "King",         "Rey",
-    "Reed",         "Scott",        "Shephard",     "Long",
-    "Anthony",      "Williams",     "Lee",          "Clark",
-    "Grant",        "Harrison",     "Henry",        "Wentworth",
-    "Flintstone",   "Alvarez",      "Sanchez",      "Martinez",
-    "Rodriguez",    "Gonzales",     "Hernandez",    "Romero",
-    "Chavez",       "Vasquez",      "Morales",      "Velasquez",
-    "Valdes",       "Cortez",       "Gomez",        "Ortega",
-    "Garcia",       "Ruiz",         "Reyes",        "Lopez",
-    "Trevino",      "Orloff",       "Stein",        "Nguyen",
-    "Trinh",        "Wang",         "Wong",         "Wu",
-    "Jin",          "Chen",         "Tang",         "Chao",
-    "Ping",         "Chu",          "Chang",        "Yang",
-    "Lombardo",     "Yamamoto",     "Matsumoto",    "Nakashima",
-    "Nomura",       "Okamura",      "Zhukov",       "Kornilov",
-    "Lazarev",      "Komarov",      "Popovich",     "Chorloff"
-  ],
-  "#variable(GivenNames)":   
-  [
-    "Oliver",       "Archer",       "Adrian",       "Daniel",
-    "Liam",         "Lucas",        "Elias",        "Nathaniel",
-    "Ethan",        "Noah",         "Samuel",       "Ezra",
-    "Aiden",        "Harrison",     "Arthur",       "Beau",
-    "Gabriel",      "Hudson",       "Gideon",       "Zachary",
-    "Caleb",        "Felix",        "Kaden",        "Tobias",
-    "Theodore",     "Elliott",      "Arlo",         "Carter",
-    "Declan",       "Jacob",        "James",        "Matthew",
-    "Owen",         "Atticus",      "Adam",         "Ian",
-    "Elijah",       "Lincoln",      "Colton",       "Ezekiel",
-    "Henry",        "Gavin",        "Ronan",        "Aaron",
-    "Jackson",      "Dominic",      "Roman",        "Thomas",
-    "Grayson",      "Jack",         "Asher",        "Xander",
-    "Levi",         "Atlas",        "Nolan",        "Soren",
-    "Benjamin",     "Isaac",        "Jonah",        "Oscar",
-    "Finn",         "Logan",        "Rhys",         "Callum",
-    "Miles",        "Wyatt",        "Nathan",       "Nicholas",
-    "Alexander",    "Silas",        "Axel",         "Ace",
-    "Sebastian",    "Cole",         "August",       "Josiah",
-    "Leo",          "Theo",         "Connor",       "Michael",
-    "Landon",       "Holden",       "Xavier",       "Vincent",
-    "Emmett",       "Luke",         "Charles",      "Edward",
-    "Everett",      "William",      "Lachlan",      "Chase",
-    "Milo",         "Isaiah",       "Apollo",        "David",
-    "Jasper",       "Eli",          "Jace",          "Malachi",
-
-    "Charlotte",     "Ivy",         "Naomi",         "Arabella",
-    "Ava",           "Ella",        "Zoey",          "Athena",
-    "Amelia",        "Eleanor",     "Aaliyah",       "Maya",
-    "Olivia",        "Audrey",      "Elizabeth",     "Saoirse",
-    "Aurora",        "Genevieve",   "Evangeline",    "Zoe",
-    "Violet",        "Iris",        "Autumn",        "Sienna",
-    "Luna",          "Isabella",    "Esme",          "Evelyn",
-    "Hazel",         "Lucy",        "Mia",           "Rose",
-    "Chloe",         "Ophelia",     "Daisy",         "Harper",
-    "Arya",          "Eloise",      "Ruby",          "Josephine",
-    "Scarlett",      "Vivian",      "Margot",        "Felicity",
-    "Isla",          "Lorelei",     "Layla",         "Delilah",
-    "Abigail",       "Wren",        "Anastasia",     "Amaya",
-    "Freya",         "Hannah",      "Sadie",         "Caroline",
-    "Adeline",       "Clara",       "Stella",        "Olive",
-    "Sophia",        "Lydia",       "Lila",          "Adalyn",
-    "Nora",          "Madeleine",   "Rosalie",       "Brielle",
-    "Adelaide",      "Claire",      "Daphne",        "Matilda",
-    "Emma",          "Astrid",      "Fiona",         "Aurelia",
-    "Mila",          "Thea",        "Phoebe",        "Willow",
-    "Lily",          "Kaia",        "Savannah",      "Natalie",
-    "Grace",         "Cora",        "Alice",         "Leilani",
-    "Maeve",         "Penelope",    "Eliana",        "Ada",
-    "Eliza",         "Elena",       "Gemma",         "Mabel",
-    "Emily",         "Isabelle",    "Nadia",         "Amara"
-  ],
   
   "#variable(ShipNames)":
   {
@@ -249,22 +163,80 @@
     }
   },
 
+  "#variable(currentDate)":   "2512-5-7",
+
+  "#variable(officers)": 
+  [
+    { "Name": "Captain",                "Weight": 1 },
+    { "Name": "First Officer",          "Weight": 2 },
+    { "Name": "Engineering Officer",    "Weight": 3 },
+    { "Name": "Operations Officer",     "Weight": 3 },
+    { "Name": "Communications Officer", "Weight": 4 },
+    { "Name": "Medical Officer",        "Weight": 4 }
+  ],
+
+  "#variable(crewPositions)": 
+  [
+    { "Name": "Propulsion Technician" },
+    { "Name": "Maintenance Technician" },
+    { "Name": "Medical Technician" },
+    { "Name": "Communications Technician" },
+    { "Name": "Pilot" }
+  ],
+
+  "#variable(crewTitles)": 
+  [
+    { "Name": "Chief /s/",          "MaxYears": 15, "Weight": 5 },
+    { "Name": "/s/ First Class",    "MaxYears": 8,  "Weight": 6 },
+    { "Name": "/s/ Second Class",   "MaxYears": 6,  "Weight": 7 },
+    { "Name": "/s/ Second Class",   "MaxYears": 6,  "Weight": 7 },
+    { "Name": "/s/ Third Class",    "MaxYears": 2,  "Weight": 8 },
+    { "Name": "/s/ Third Class",    "MaxYears": 2,  "Weight": 8 },
+    { "Name": "/s/ Third Class",    "MaxYears": 2,  "Weight": 8 }
+  ],
+
   "#iterate($NumShips, [])": 
   {
     "#variable(registration)":  "#(pickrandom($origins))",
 
-    "name":             "#(pickrandomunique($ShipNames.ships, 'names').name)",
-    "skipper":          "#(pickrandom($GivenNames) + ' ' + pickrandom($Surnames))",
-    "classname":        "#(pickrandom(['Super Heavy Freighter', 'Heavy Freighter', 'Medium Freighter', 'Light Freighter', 'Large Passenger', 'Medium Passenger', 'Small Passenger', 'Large Cruiser', 'Medium Cruiser', 'Small Cruiser']))",
-    "registration":     "#($registration)",
-    "year_built":       "#(randominteger(2384, 2512))",
-    "length":           "#(randominteger(85, 245))",
-    "width":            "#(randominteger(24, 64))",
-    "height":           "#(randominteger(12, 32))",
-    "numengines":       "#(randominteger(1, 4) * 2)",
-    "maxwarp":          "#(randominteger(4, 10))",
-    "pod_attachment":   "#(pickrandom(['external', 'internal'])",
-    "maxpods":          "#(randominteger(8, 32) * 2)"
+    "Name":             "#(pickrandomunique($ShipNames.ships, 'names').name)",
+    "ClassName":        "#(pickrandom(['Super Heavy Freighter', 'Heavy Freighter', 'Medium Freighter', 'Light Freighter', 'Large Passenger', 'Medium Passenger', 'Small Passenger', 'Large Cruiser', 'Medium Cruiser', 'Small Cruiser']))",
+    "Registration":     "#($registration)",
+    "YearBuilt":        "#(randominteger(2384, 2512))",
+    "Length":           "#(randominteger(85, 245))",
+    "Width":            "#(randominteger(24, 64))",
+    "Height":           "#(randominteger(12, 32))",
+    "NumEngines":       "#(randominteger(1, 4) * 2)",
+    "MaxWarp":          "#(randominteger(4, 10))",
+    "PodAttachment":    "#(pickrandom(['external', 'internal'])",
+    "MaxPods":          "#(randominteger(8, 32) * 2)",
+
+    "#array(Crew)": 
+    {
+      "#foreach($officers, {})":
+      {
+        "#variable(age_in_days)":   "#(randominteger(2 * 365, 15 * 365) * -1)",
+
+        "CrewId":                   "#(pickrandomunique($persons, 'persons').Id)",
+        "Position":                 "#(Name)",
+        "PositionWeight":           "#(Weight)",
+        "Started":                  "#(formatdatetime(adddays($currentDate, $age_in_days), 'yyyy-MM-dd'))"
+      },
+
+      "#foreach($crewPositions)":
+      {
+        "#variable(CrewPosition)":    "#(Name)",
+
+        "#foreach($crewTitles, {})":
+        {
+          "#variable(age_in_days)":   "#(randominteger(1 * 365, MaxYears * 365) * -1)",
+
+          "CrewId":                   "#(pickrandomunique($persons, 'persons').Id)",
+          "Position":                 "#(replaced(Name, '/s/', $CrewPosition))",
+          "PositionWeight":           "#(Weight)",
+          "Started":                  "#(formatdatetime(adddays($currentDate, $age_in_days), 'yyyy-MM-dd'))"
+        }
+      }
+    }
   }
 }
-

@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using System.Net;
 using System.Text;
 
@@ -9,19 +10,31 @@ namespace Rota.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ShipController(IShipService svc) : ControllerBase
+    public class ShipController(IShipService svc) : BaseController
     {
         [HttpGet]
-        public async Task<ContentResult> Get()
+        [Route("list")]
+        public Task<ContentResult> GetAll([FromQuery] string? search = null)
         {
-            var result = await svc.GetAll();
+            search = search?.ToLower();
 
-            return new ContentResult
-            {
-                Content     = result,
-                ContentType = "application/json",
-                StatusCode  = 200,
-            };
+            return string.IsNullOrWhiteSpace(search) 
+                ? HandleResult( async ()=> await svc.Get( (i)=> true ) )
+                : HandleResult( async ()=> await svc.Get( (i)=> i.Name.ToLower().Contains(search) ) );
+        }
+
+        [HttpGet]
+        [Route("{id}")]
+        public Task<ContentResult> Get(string id)
+        {
+            return HandleResult( async ()=> await svc.Get(Guid.Parse(id)) );
+        }
+
+        [HttpGet]
+        [Route("{id}/officers")]
+        public Task<ContentResult> GetWithOfficers(string id)
+        {
+            return HandleResult( async ()=> await svc.GetWithOfficers(Guid.Parse(id)) );
         }
     }
 }

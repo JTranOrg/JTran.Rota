@@ -1,0 +1,25 @@
+{
+  "Name":             "#(Ship.Name)",
+  "ClassName":        "#(Ship.ClassName)",
+  "Registration":     "#(Ship.Registration)",
+  "YearBuilt":        "#(Ship.YearBuilt)",
+  "Length":           "#(Ship.Length)",
+  "Width":            "#(Ship.Width)",
+  "Height":           "#(Ship.Height)",
+  "NumEngines":       "#(Ship.NumEngines)",
+  "MaxWarp":          "#(Ship.MaxWarp)",
+  "PodAttachment":    "#(Ship.PodAttachment)",
+  "MaxPods":          "#(Ship.MaxPods)",
+
+  "#variable(crew)":  "#innerjoin(Ship.Crew, Persons, left.CrewId == right.Id)",
+
+  "#foreach($crew, Crew)": 
+  {
+    "Name":           "#(right.GivenName + ' ' + right.Surname)",
+    "Position":       "#(left.Position)",
+    "PositionWeight": "#(left.PositionWeight)",
+    "Started":        "#(left.Started)",
+    "DOB":            "#(right.DOB)",
+    "POB":            "#(right.POB)"
+  }
+}

@@ -6,11 +6,11 @@ namespace Rota.Service.UnitTests
     public class PersonServiceTests
     {
         private readonly Mock<IRepository<Person>> _repo = new();
-        private readonly IPersonService _svc;
+        private readonly IService<Person> _svc;
 
         public PersonServiceTests()
         {
-            _svc = new PersonService(_repo.Object);
+            _svc = new Service<Person>(_repo.Object);
         }
 
         [TestMethod]

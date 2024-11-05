@@ -1,64 +1,105 @@
 @import './base.less';
 @import './colors.less';
 
+@main-font:                 'Segoe UI';
+
 body
 {
-  background-color:       @main-body-clr;
-  font-family:            'Segoe UI'
+  background-color:         @main-body-clr;
+  font-family:              @main-font;
+  overflow:                 hidden;
 }
+
+@header-ht:                 0;
 
 h2
 {
-  font-weight:            600;
-  color:                  #2c3e50;
+  font-weight:              600;
+  color:                    #2c3e50;
 }
 
 h3
 {
-  font-weight:            600;
-  color:                  #2c3e50;
-  margin:                 0 0 20px 6px;
+  font-weight:              600;
+  color:                    #2c3e50;
+  margin:                   0 0 20px 6px;
 }
 
-@sidebar-wd:              100px;
-@list-wd:                 300px;
+@sidebar-wd:                100px;
+@list-wd:                   300px;
 
 .shiplist
 {
-  background-color:       @shiplist-background-clr;
-  width:                  @list-wd;
-  position:               absolute;
-  left:                   @sidebar-wd;
-  top:                    0;
-  bottom:                 0;
-  padding:                20px;
+  background-color:         @shiplist-background-clr;
+  width:                    @list-wd;
+  position:                 absolute;
+  left:                     @sidebar-wd;
+  top:                      @header-ht;
+  bottom:                   0;
+  padding:                  41px 0 105px 0;
+  border-right:             1px solid darken(@main-body-clr, 3%);      
 
-  ul
+  h2
   {
-    list-style-type:      none;
-    padding:              0;
-    margin:               20px 0 0 -10px;
+    margin-left:             20px;
+  }
 
-    li
+  input
+  {
+    border-radius:          8px;
+    border:                 1px solid #dedede;
+    font-family:            @main-font;
+    font-size:              12pt;
+    padding:                0 8px 0 12px;
+    height:                 2.3em;
+    width:                  100%;
+
+    &:focus
     {
-      margin-bottom:      2px;
-      padding:            5px 5px 5px 12px;
+      border:               1px solid #dedede !important;
+    }
+  }
 
-      div:first-child
+  > div:first-of-type
+  {
+    margin:                 10px 20px;
+  }
+
+  > div:nth-of-type(2)
+  {
+    height:                 100%;
+    width:                  100%;
+    overflow-y:             scroll;
+    padding-bottom:         0;
+
+    ul
+    {
+      list-style-type:      none;
+      padding:              0 0 2px 10px;
+      margin:               20px 10px 0 0;
+  
+      li
       {
-        font-size:        12pt;
-        font-weight:      500;
-        float: none;
-      }
-
-      div:last-child
-      {
-        font-size:        11pt;
-        font-weight:      500;
-        color:            #bbb; 
-        float:            none;
-        margin:           -2px 0 0 1px;
-
+        margin-bottom:      2px;
+        padding:            5px 5px 5px 12px;
+        border-radius:      8px;
+  
+        div:first-child
+        {
+          font-size:        12pt;
+          font-weight:      500;
+          float: none;
+        }
+  
+        div:last-child
+        {
+          font-size:        11pt;
+          font-weight:      500;
+          color:            #bbb; 
+          float:            none;
+          margin:           -2px 0 0 1px;
+  
+        }
       }
     }
   }
@@ -79,22 +120,25 @@ h3
 
 .shipdetails
 {
-  position:               absolute;
-  left:                   @sidebar-wd + @list-wd;
-  right:                  0;
-  top:                    0;
-  bottom:                 0;
-  padding:                40px;
+  position:                 absolute;
+  left:                     @sidebar-wd + @list-wd;
+  right:                    0;
+  top:                      @header-ht;
+  bottom:                   0;
+  padding:                  40px;
+  border-left:              1px solid darken(@main-body-clr, 1%);      
 
-  div
+
+  > div
   {
-    background-color:     white;
-    margin:               20px 30px 30px 0;
-    padding:              28px;
-    min-width:            24em;
-    min-height:           23.5em;
-    border-radius:        14px;
-    float:                left;
+    background-color:       white;
+    margin:                 20px 20px 0 0;
+    padding:                28px 28px 20px 28px;
+    min-width:              26em;
+    min-height:             23.5em;
+    max-width:              28em;
+    border-radius:          14px;
+    float:                  left;
 
     table
     {
@@ -119,40 +163,126 @@ h3
           
       }
     }
+
+    &:nth-of-type(2)
+    {
+      height:               auto;
+      border-radius:        0;
+      padding:              0;
+      background-color:     transparent;
+      min-height:           0;
+      width:                auto;
+
+      img
+      {
+        max-height:         24em;
+        border-radius:      14px;
+        font-size:          11pt;
+      }
+    }
+
+    > .routerlink
+    {
+      margin-top:           24px;
+      font-family:          @main-font;
+
+      RouterLink
+      {
+        font-weight:          600;
+        font-size:            11pt;
+        border:               none;
+        padding:              8px;
+        background-color:     transparent;
+        color:                steelblue;
+        background-image:     url("right-arrow.png");
+        background-size:      24px;
+        background-repeat:    no-repeat;
+        background-position:  left center;
+        padding-left:         28px;
+      }
+
+      &:hover
+      {
+        cursor: pointer;
+        color: lighten(steelblue, 20%);
+      }
+    }
   }
 }
 
 .sidebar
 {
-  background-color: @sidebar-background-clr;
-  width:            @sidebar-wd;
-  position:         absolute;
-  left:             0;
-  top:              0;
-  bottom:           0;
+  background-color:         @sidebar-background-clr;
+  width:                    @sidebar-wd;
+  position:                 absolute;
+  left:                     0;
+  top:                      @header-ht;
+  bottom:                   0;
 
   ul
   {
-    list-style-type:      none;
-    padding:              0;
-    margin:               20px;
+    list-style-type:        none;
+    padding:                0;
+    margin:                 40px 20px;
+    height:                 auto;
 
-    li
+    li 
     {
-      width: 60px;
-      height: 60px;
-      background-color: white;
+      &:extend(.invert);
+
+      width:                60px;
+      height:               60px;
+      background-size:      40px;
+      background-repeat:    no-repeat;
+      background-position:  center;
+      color:                white;
+      border-radius:        10px;
+      margin-top:           20px;
+
+      &:hover
+      {
+        cursor:             pointer;
+        background-color:   lighten(@sidebar-background-clr, 75%);
+
+        div
+        {
+          display: block;
+        }
+      }
+
+      div
+      {
+        color: black;
+        text-align: center;
+        vertical-align: bottom;
+        width: 60px;
+        height: 60px;
+        padding-top: 60px;
+        font-weight: bold;
+        display: none;
+
+
+      }
     }
 
     li:first-child
     {
-      background-image: url("ships.png");
-      color: white;
+      background-image:     url("home.png");
+    }
 
-      &:hover
-      {
-        cursor: pointer;
-      }
+    li:nth-child(2)
+    {
+      background-image:     url("ships.png");
+    }
+
+    li:nth-child(3)
+    {
+      background-image:     url("persons.png");
+    }
+
+    li:nth-child(4)
+    {
+      background-image:     url("flight.png");
     }
   }
 }

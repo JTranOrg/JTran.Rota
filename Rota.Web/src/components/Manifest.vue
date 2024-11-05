@@ -1,6 +1,6 @@
 <template>
   <div class="shipdetails">
-    <h2>Pegasus</h2>
+    <h2>Manifest</h2>
     <div>
       <h3>Current Status</h3>
       <table>

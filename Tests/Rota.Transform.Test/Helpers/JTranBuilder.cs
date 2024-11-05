@@ -9,14 +9,15 @@ namespace Rota.Transform.Test
 {
     internal static class JTranBuilder
     {
-        internal static async Task<ITransformer<T>> CreateTransformer<T>(string transformPath, object args)
+        internal static async Task<ITransformer<T>> CreateTransformer<T>(string transformPath, object args, string? docName = null, string? docContent = null)
         {
             var transform = await LoadTransform(transformPath);
 
             return TransformerBuilder.FromString(transform)
                                      .AddArguments(args.ToReadOnlyDictionary()!)
                                      .AddExtension(new RandomExtensions())
-                                     .AddDocumentRepository("docs", new DocumentRepository())
+                                     .AddExtension(new Extensions())
+                                     .AddDocumentRepository("docs", new DocumentRepository(docName, docContent))
                                      .Build<T>();
         }
 
@@ -26,5 +27,15 @@ namespace Rota.Transform.Test
             
             return File.ReadAllTextAsync(Path.Combine(location, "Transforms", name + ".jtran"));
         }    
+    }
+
+    public class Extensions
+    {
+        public string replaced(string str1, string str2, string str3)
+        {
+            var result = str1.Replace(str2, str3);
+
+            return result;
+        }
     }
 }

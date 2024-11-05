@@ -9,34 +9,20 @@ namespace Rota.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class PersonController(IPersonService svc) : ControllerBase
+    public class PersonController(IService<Person> svc) : BaseController
     {
         [HttpGet]
         [Route("")]
-        public async Task<ContentResult> GetAll()
+        public Task<ContentResult> GetAll()
         {
-            var result = await svc.GetAll();
-
-            return new ContentResult
-            {
-                Content     = result,
-                ContentType = "application/json",
-                StatusCode  = 200,
-            };
+            return HandleResult( async ()=> await svc.GetAll() );
         }
 
         [HttpGet]
         [Route("{id}")]
-        public async Task<ContentResult> Get(string id)
+        public Task<ContentResult> Get(string id)
         {
-            var result = await svc.Get(Guid.Parse(id));
-
-            return new ContentResult
-            {
-                Content     = result,
-                ContentType = "application/json",
-                StatusCode  = 200,
-            };
+            return HandleResult( async ()=> await svc.Get(Guid.Parse(id)) );
         }
     }
 }
