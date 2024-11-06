@@ -80,25 +80,36 @@ h3
   
       li
       {
-        margin-bottom:      2px;
+        margin:             2px;
         padding:            5px 5px 5px 12px;
         border-radius:      8px;
   
-        div:first-child
+        a
         {
-          font-size:        12pt;
-          font-weight:      500;
-          float: none;
-        }
+          padding: 0;
+          margin: 0;
+
+          > div
+          {
+          }
+
+          div:first-child
+          {
+            font-size:        12pt;
+            color: black;
+            font-weight:      500;
+            float:            none;
+          }
   
-        div:last-child
-        {
-          font-size:        11pt;
-          font-weight:      500;
-          color:            #bbb; 
-          float:            none;
-          margin:           -2px 0 0 1px;
+          div:last-child
+          {
+            font-size:        11pt;
+            font-weight:      500;
+            color:            #bbb; 
+            float:            none;
+            margin:           -2px 0 0 1px;
   
+          }
         }
       }
     }
@@ -186,7 +197,7 @@ h3
       margin-top:           24px;
       font-family:          @main-font;
 
-      RouterLink
+      a
       {
         font-weight:          600;
         font-size:            11pt;

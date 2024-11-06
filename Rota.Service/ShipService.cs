@@ -33,7 +33,7 @@ namespace Rota.Service
             var data         = new CombinedData { Ship = ship, Persons = persons }; 
             using var stream = new MemoryStream();
 
-            transformer.Transform(data, stream, new TransformerContext { Arguments = new Dictionary<string, object> { {"lowestGrade", lowestGrade} }});
+            transformer.Transform(data, stream);
 
             return await stream.ReadStringAsync();
         }

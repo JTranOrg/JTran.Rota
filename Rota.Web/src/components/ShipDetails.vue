@@ -1,36 +1,38 @@
 <template>
   <div class="shipdetails">
-    <h2>Pegasus</h2>
+    <h2>{{ ship.Name }}</h2>
     <div>
       <h3>Current Status</h3>
       <table>
-        <tr>
-          <td>Status</td>
-          <td>In-Flight</td>
-        </tr>
-        <tr>
-          <td>Location</td>
-          <td>140.23x - 30.25y - 51.7z</td>
-        </tr>
-        <tr>
-          <td>Origin</td>
-          <td>Rigel 5</td>
-        </tr>
-        <tr>
-          <td>Destination</td>
-          <td>Terra</td>
-        </tr>
-        <tr>
-          <td>Departed</td>
-          <td>27 Oct 2512</td>
-        </tr>
-        <tr>
-          <td>Expected Arrival</td>
-          <td>6 Nov 2512</td>
-        </tr>
+        <tbody>
+          <tr>
+            <td>Status</td>
+            <td>In-Flight</td>
+          </tr>
+          <tr>
+            <td>Location</td>
+            <td>140.23x - 30.25y - 51.7z</td>
+          </tr>
+          <tr>
+            <td>Origin</td>
+            <td>Rigel 5</td>
+          </tr>
+          <tr>
+            <td>Destination</td>
+            <td>Terra</td>
+          </tr>
+          <tr>
+            <td>Departed</td>
+            <td>27 Oct 2512</td>
+          </tr>
+          <tr>
+            <td>Expected Arrival</td>
+            <td>6 Nov 2512</td>
+          </tr>
+        </tbody>
       </table>
       <div class="routerlink">
-        <RouterLink to="/ship/manifest">Manifest</RouterLink>
+        <router-link :to="{ name: 'Manifest' }">Manifest</router-link>
       </div>
       </div>
     <div>
@@ -59,7 +61,7 @@
         </tr>
       </table>
       <div class="routerlink">
-        <RouterLink to="/ship/crewlist">Full Crew List</RouterLink>
+        <router-link :to="{ name: 'CrewList' }">Full Crew List</router-link>
       </div>
     </div>
 
@@ -68,6 +70,7 @@
 
 <script lang="ts">
   import type { Ship } from "@/types/Ship";
+  import { shipService } from "@/services/ShipService"
 
   export default {
     data() {
@@ -78,14 +81,35 @@
 
       // GetShips
       getShip( id : string) {
-        fetch('https://localhost:7046/Ship/' + id + '/officers')
-          .then(response => response.json())
-          .then(data => this.ship = data)
+
+        if(id != null)
+        {
+          shipService.getShipDetail(id)
+            .then(data =>
+              {
+                this.ship = data;
+              })
+        }
       }
     },
 
-    mounted() {
-      this.getShip("714f3968-09da-409d-a03c-f2407b2aca25") //this.$route.params.id)
+    created() {
+      try {
+        this.$watch(() => this.$route.params.shipId,
+          (newId, oldId) => {
+            try
+            {
+              this.getShip(this.$route.params.shipId);
+            }
+            catch(e)
+            {
+                alert('bob' + e);
+            }
+          })      
+      }
+      catch (e2) {
+        alert("goodbye" + e2);
+      }
     }
   }
 </script>

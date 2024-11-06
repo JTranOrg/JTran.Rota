@@ -82,10 +82,6 @@
           .then(response => response.json())
           .then(data => this.ship = data)
       }
-    },
-
-    mounted() {
-      this.getShip("714f3968-09da-409d-a03c-f2407b2aca25") //this.$route.params.id)
     }
   }
 </script>

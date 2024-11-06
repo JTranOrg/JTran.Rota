@@ -6,9 +6,11 @@
     </div>
     <div>
       <ul>
-        <li v-for="ship in ships" :key="ship.Id" @click="setActiveShip(ship.Id)">
-          <div>{{ ship.Name }}</div>
-          <div>{{ ship.Status }}</div>
+        <li v-for="ship in ships" :key="ship.Id">
+          <router-link :to="{ name: 'ShipDetails', params: {shipId: ship.Id} }">
+            <div>{{ ship.Name }}</div>
+            <div>{{ ship.Status }}</div>
+          </router-link>
         </li>
       </ul>
     </div>
@@ -18,12 +20,12 @@
 
 <script lang="ts">
   import type { Ship } from "@/types/Ship";
+  import { shipService } from "@/services/ShipService"
 
   export default  {
     data() {
       return {
         ships: [] as Ship[],
-        currentShip: "",
         prefix: ""
       };
     },
@@ -32,13 +34,8 @@
 
         // GetShips
       getShips() {
-        fetch('https://localhost:7046/ship/list?search=' + this.prefix)
-            .then(response => response.json())
-            .then(data => this.ships = data )
-          },
-
-      setActiveShip(idShip: string) {
-        this.currentShip = idShip;
+        shipService.getShipList(this.prefix)
+                   .then(data => this.ships = data )
       },
 
       onFilterChange()
